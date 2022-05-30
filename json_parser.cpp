@@ -179,13 +179,11 @@ namespace lwy {
             else if (u <= 0x7FF) {
                 str += static_cast<char> (0xC0 | ((u >> 6) & 0xFF));
                 str += static_cast<char> (0x80 | ( u	   & 0x3F));
-            }
-            else if (u <= 0xFFFF) {
+            } else if (u <= 0xFFFF) {
                 str += static_cast<char> (0xE0 | ((u >> 12) & 0xFF));
                 str += static_cast<char> (0x80 | ((u >>  6) & 0x3F));
                 str += static_cast<char> (0x80 | ( u        & 0x3F));
-            }
-            else {
+            } else {
                 assert(u <= 0x10FFFF);
                 str += static_cast<char> (0xF0 | ((u >> 18) & 0xFF));
                 str += static_cast<char> (0x80 | ((u >> 12) & 0x3F));
